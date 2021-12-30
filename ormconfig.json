@@ -1,0 +1,19 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "root1234",
+  "database": "testexercise1",
+  "synchronize": false,
+  "logging": true,
+  "entities": ["src/database/model/**/*.ts"],
+  "migrations": ["src/database/migration/**/*.js"],
+  "migrationsTableName": "custom_migration_table",
+  "subscribers": ["src/database/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/database/model",
+    "migrationsDir": "src/database/migration",
+    "subscribersDir": "src/database/subscriber"
+  }
+}
