@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { ResponseParser } from '../util/response-parser';
 import logger from '../core/logger';
-import i18n from 'i18n';
 
 export class HttpRequestValidator {
   private responseParser: ResponseParser;
