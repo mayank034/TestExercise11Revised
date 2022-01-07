@@ -16,6 +16,10 @@ export class UsersController {
     let response;
     try {
       response = await this.usersService.registerUser(req.body);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } 
     catch (err) {
       if (err instanceof createHttpError.BadRequest) {
@@ -24,10 +28,6 @@ export class UsersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public loginAccount = async (req: Request, res: Response): Promise<void> => {
@@ -35,13 +35,13 @@ export class UsersController {
     try {
       const params: any = req.body;
       response = await this.usersService.login(params);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       throw new createHttpError.InternalServerError(err);
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public forgotPassword = async (req: Request, res: Response): Promise<void> => {
@@ -49,12 +49,12 @@ export class UsersController {
     try {
       const params: any = req.body;
       response = await this.usersService.forgotPassword(params);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       throw new createHttpError.InternalServerError(err);
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 }

@@ -8,9 +8,7 @@ export class Auth {
   public auth(req: Request, res: Response, next: NextFunction){
   try {
     const token = req.headers.authorization.split(' ')[1];
-      console.log('##########TOKEN RECIEVED. API ACCESS VIA REST CLIENT########');
       const decodedToken: any = jwt.verify(token, JWT_SECRET);
-      console.log(decodedToken);
       const tokenStatus = decodedToken.isActive;
       if (tokenStatus) {
         next();
@@ -18,7 +16,6 @@ export class Auth {
         throw 'Invalid token';
       }
   } catch(error) {
-      console.log('plplplpllpllplplplpl', error);
       throw error;
     };
   };

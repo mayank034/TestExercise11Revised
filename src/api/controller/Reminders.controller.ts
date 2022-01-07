@@ -16,6 +16,10 @@ export class RemindersController {
     let response;
     try {
       response = await this.remindersService.createReminder(req.body);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
         throw err;
@@ -23,16 +27,16 @@ export class RemindersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public getTodayReminder = async (req: Request, res: Response): Promise<void> => {
     let response;
     try {
-      response = await this.remindersService.getTodayReminder( req.body );    
+      response = await this.remindersService.getTodayReminder( req.body );
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);    
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
         throw err;
@@ -40,16 +44,16 @@ export class RemindersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public getReminder = async (req: Request, res: Response): Promise<void> => {
     let response;
     try {
-      response = await this.remindersService.getReminder(req.body);    
+      response = await this.remindersService.getReminder(req.body);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);    
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
         throw err;
@@ -57,10 +61,6 @@ export class RemindersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
 
@@ -69,14 +69,13 @@ export class RemindersController {
     try {
       const params: any[] = req.body;
       response = await this.remindersService.updateReminder(params[0], params[1]);
-      console.log(response);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       throw new createHttpError.InternalServerError(err);
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public updateStatus = async (req: Request, res: Response): Promise<void> => {
@@ -84,21 +83,23 @@ export class RemindersController {
     try {
       const params: any = req.body;
       response = await this.remindersService.updateReminderStatus(params);
-      console.log(response);
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       throw new createHttpError.InternalServerError(err);
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public deleteReminder = async (req: Request, res: Response): Promise<void> => {
     try {
       await this.remindersService.deleteReminder(req.body);
-      console.log( "gfjfjfjfjhfjh" );
       var response = 'Reminder deleted successfully';
+      return this.responseParser
+      .setHttpCode(constant.HTTP_STATUS_OK)
+      .setMessage(response)
+      .send(res);
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
         throw err;
@@ -106,17 +107,16 @@ export class RemindersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public deleteDateReminder = async (req: Request, res: Response): Promise<void> => {
     try {
       await this.remindersService.deleteDateReminder(req.body);
-    console.log( "gfjfjfjfjhfjh" );
-    var response = 'Reminder/Reminders of the given date deleted successfully';
+     var response = 'Reminder/Reminders of the given date deleted successfully';
+     return this.responseParser
+     .setHttpCode(constant.HTTP_STATUS_OK)
+     .setMessage(response)
+     .send(res);
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
         throw err;
@@ -124,16 +124,11 @@ export class RemindersController {
         throw new createHttpError.InternalServerError(err);
       }
     }
-    return this.responseParser
-      .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
-      .send(res);
   };
 
   public deleteCompletedReminder = async (req: Request, res: Response): Promise<void> => {
     try {
       await this.remindersService.deleteCompletedReminder();
-      console.log( "gfjfjfjfjhfjh" );
       var response = 'Deleted all completed reminders';
     } catch (err) {
       if (err instanceof createHttpError.BadRequest) {
@@ -144,7 +139,7 @@ export class RemindersController {
     }
     return this.responseParser
       .setHttpCode(constant.HTTP_STATUS_OK)
-      .setBody(response)
+      .setMessage(response)
       .send(res);
   };
 }

@@ -44,7 +44,6 @@ export class UsersRepo extends Repository<Users> {
     }
     catch(err)
     {
-      console.log('mawldmlawmdl', err);
       throw err;
     }
   }

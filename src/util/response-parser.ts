@@ -33,8 +33,7 @@ export class ResponseParser {
   constructor() {
     this.resHttpCode = 200;
     this.resStatus = true;
-    this.resMessage = "";
-    this.resCode = "SUC10000";
+    this.resMessage = '';
     this.resBody = {};
   }
 

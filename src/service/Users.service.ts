@@ -9,8 +9,6 @@ import bcrypt = require('bcryptjs');
 
 @Service()
 export class UsersService {
-  constructor() 
-  {}
   /**
    * @param  {string} email user's email
    * @param  {string} password password

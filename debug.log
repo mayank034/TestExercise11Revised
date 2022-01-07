@@ -155,3 +155,33 @@
 {"level":"debug","message":"Logging initialized at debug level"}
 {"level":"info","message":"Connected to DB"}
 {"_original":{"email":"m6@m.com","password":"m"},"details":[{"context":{"key":"password","label":"password","limit":8,"value":"m"},"message":"The email or password you entered is incorrect. Please try something else.","path":["password"],"type":"string.min"}],"level":"error","message":"The email or password you entered is incorrect. Please try something else.","stack":"ValidationError: The email or password you entered is incorrect. Please try something else."}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"_original":{"accountTypeAdmin":1,"email":"m8","name":"m8","password":"m7777777"},"details":[{"context":{"invalids":["m8"],"key":"email","label":"email","value":"m8"},"message":"Invalid email","path":["email"],"type":"string.email"}],"level":"error","message":"Invalid email","stack":"ValidationError: Invalid email"}
+{"_original":{"accountTypeAdmin":1,"email":"","name":"m8","password":"m7777777"},"details":[{"context":{"key":"email","label":"email","value":""},"message":"Email is required","path":["email"],"type":"string.empty"}],"level":"error","message":"Email is required","stack":"ValidationError: Email is required"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}
+{"level":"debug","message":"Logging initialized at debug level"}
+{"level":"info","message":"Connected to DB"}

@@ -46,7 +46,6 @@ import {
         createdAt: todayDate, statusCompleted: filter
       });
       };
-      console.log('gfjfjfjfkhjfkjvjkvkjvjkvkjkvkjvkvkjvjkvkv', requiredReminder );
       return requiredReminder;
     }
 
@@ -62,7 +61,6 @@ import {
         createdAt: remindersDate.reminderDate, statusCompleted: remindersDate.filter
       });
       };
-      console.log('lmlmlmlmlmlmmlmlmmllml', requiredReminder );
       return requiredReminder;
     }
   
@@ -110,12 +108,10 @@ import {
   
     public async createReminder(data: object): Promise<Reminders> {
       try{
-        console.log('jkdbnkbkjakdjadk awd');
         const reminder = await getRepository(Reminders).save(data);
         return reminder;
       }
       catch(err){
-      console.log('ajndljanwldn', err);
       throw new createHttpError.InternalServerError(err);
     };
   }

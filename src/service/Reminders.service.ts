@@ -7,8 +7,6 @@ import date from 'date-and-time';
 
 @Service()
 export class RemindersService {
-  constructor(
-      ) {}
   /**
    * @param  {string} email user's email
    * @param  {string} password password
