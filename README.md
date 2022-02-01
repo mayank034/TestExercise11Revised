@@ -1,4 +1,4 @@
-# TestExercise11
+# ReminderAppBE
 
 Problem Statement :-
  Create a Reminder App which can be used for day to day updates on important events of the day.
